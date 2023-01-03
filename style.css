@@ -1,0 +1,124 @@
+:root {
+    --typewriterSpeed: 6s;
+    --typewriterCharacters: 42;
+    --bg-color:#ACD1AF ;
+  }
+
+*{
+    margin:0 ;
+    padding:0 ;
+    box-sizing: border-box;
+    /* background-color: #ACD1AF; */
+    background: var(--bg-color);
+}
+
+#controls{
+    font-family: 'Source Code Pro', monospace;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    /* margin: 10px; */
+    color: #013220;
+
+}
+
+/* #controls >p {
+     font-size: 50px; 
+    
+} */
+
+p {
+    margin-left: 10px;
+    margin-bottom: 15px;
+    font-size: 35px;
+    position: relative;
+    font-family: 'Source Code Pro', monospace;
+    font-style: bold;
+    position: relative;
+    width: max-content;
+    color: #013220;
+    text-align: center;
+  }
+  
+  p::before,
+  p::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  
+  p::before {
+    background: var(--bg-color);
+    animation: typewriter var(--typewriterSpeed)
+      steps(var(--typewriterCharacters)) 1s forwards;
+  }
+  
+  @keyframes typewriter {
+    to {
+        left:100%;
+    };
+    
+  }
+  p::after {
+    width: 0.125em;
+    background: black;
+    animation: typewriter var(--typewriterSpeed)
+        steps(var(--typewriterCharacters)) 1s forwards,
+      blink 750ms steps(var(--typewriterCharacters)) infinite;
+  }
+  
+@keyframes blink {
+  to{
+    background: transparent;
+  }
+}
+
+
+#mandrake {
+    display: none;
+}
+
+#container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 7px 7px 7px black;
+    border:1px solid black;
+    padding: 10px;
+    width:  500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 2%;
+    
+}
+
+#canvas1 {
+    box-shadow: inset 5px 5px 5px black;
+    background : #fffdd0
+    
+ }
+ 
+.button {
+    background-color: #013220;; /* Green */
+    border:1px solid black;
+    color: white;
+    padding: 10px 20px;
+    margin-left: 12px;
+    margin-bottom: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 9%;  
+    box-shadow: 5px 5px 5px black;
+  }
+
+  .button:hover {background-color: #3E5B18}
+
+  .button:active {
+    box-shadow: inset 5px 5px 5px black;
+  }
